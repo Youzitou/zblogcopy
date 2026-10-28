@@ -1,0 +1,27 @@
+server:
+  port: 19991
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/zblog?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+    type: com.alibaba.druid.pool.DruidDataSource
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    client-type: lettuce
+    password: redisPwd
+cache:
+  default-duration: 300
+  type: memory
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+logging:
+  level:
+    com.github.spring.security.mapper: debug
+    org.springframework.security: debug
+zblog:
+  deploy-type: single
+  is-local-ip-parsing: false
